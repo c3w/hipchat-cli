@@ -64,8 +64,8 @@ fi
 # read stdin
 INPUT=$(cat)
 
-# replace newlines with XHTML <br />
-INPUT=$(echo -n "${INPUT}" | sed "s/$/<br \/>/")
+# replace newlines with XHTML <br>
+INPUT=$(echo -n "${INPUT}" | sed "s/$/\<br\>/")
 
 # replace bare URLs with real hyperlinks
 INPUT=$(echo -n "${INPUT}" | perl -p -e "s/(?<!href=\")((?:https?|ftp|mailto)\:\/\/[^ ]*)/\<a href=\"\1\"\>\1\<\/a>/g")
